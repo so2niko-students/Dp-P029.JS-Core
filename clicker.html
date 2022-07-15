@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .btn {
+          width: 150px;
+          height: 50px;
+          color: black;
+          font-family: "Times New Roman", Times, serif;
+          font-weight: normal;
+          font-size: 1.6em;
+          border-style: solid;
+          border-radius: 5px;
+        }
+  
+        #timeIsChecked {
+          font-weight: bold;
+          font-size: 2.5em;
+          display: block;
+          margin: 0 auto;
+          transform: translateX(7.5%);
+        }
+      </style>  
+  </head>
+  <body>
+    <button class="btn btnM" type="button" id="btn222">Відняти</button>
+    <button class="btn btnP" type="button">Додати</button>
+    <br />
+    <br />
+    <span id="timeIsChecked">0</span>
+    <script>
+      let timesClicked = 0;
+    //   const timeIsChecked = document.getElementById("timeIsChecked");
+      document.querySelector('.btnM').addEventListener('click', btnClickLess);
+      document.querySelector('.btnP').addEventListener('click', btnClickMore);
+
+      function btnClickMore() {
+        timesClicked++;
+        timeIsChecked.innerHTML = timesClicked;
+      }
+
+      function btnClickLess() {
+        if (timesClicked == 0) {
+          return ;
+        }
+        timesClicked--;
+        timeIsChecked.innerHTML = timesClicked;
+      }
+    </script>
+  </body>
+</html>
